@@ -124,6 +124,7 @@ export const GlobalProvider = ({ children }) => {
       newPokemonData.push(pokemonData);
     }
 
+    //add new pokemon data to the old pokemon data
     setAllPokemonData([...allPokemonData, ...newPokemonData]);
   };
 
@@ -138,6 +139,7 @@ export const GlobalProvider = ({ children }) => {
     dispatch({ type: "GET_SEARCH", payload: res });
   }, 500);
 
+  //initial fetch
   useEffect(() => {
     getPokemonDatabase();
     allPokemon();
